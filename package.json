@@ -1,0 +1,14 @@
+{
+  "name": "markitor",
+  "version": "0.0.1",
+  "description": "A simple markdown editor",
+  "main": "index.html",
+  "dependencies": {
+    "markdown": "~0.5.0",
+    "js-beautify": "~1.4.2"
+  },
+  "author": {
+    "name": "Fabian Trampusch"
+  },
+  "devDependencies": {}
+}
