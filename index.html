@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>markitor - a simple live markdown editor</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="node_modules/js-beautify/js/lib/beautify-html.js"></script>
+        <script src="node_modules/markdown/lib/markdown.js"></script>
+    </head>
+    <body>
+        <div class="markdown-centered">
+            <h1>Markitor - a simple live markdown editor</h1>
+            <textarea class="markdown-editor">Enter your *markdown* here!</textarea>
+            <div><pre class="markdown-html">html</pre></div>
+            <div class="markdown-preview"><pre>preview</pre></div>
+        </div>
+        
+        <script type="text/javascript">
+        (function() {
+            var $ = function (classname) { return document.getElementsByClassName(classname)[0]; };
+            var editor = $("markdown-editor");
+            var previewHtml = $("markdown-html");
+            var preview = $("markdown-preview");
+            
+            editor.onkeyup = function() {
+                var markdownSrc = editor.value;
+                var markdownHtml = markdown.toHTML(markdownSrc);
+                var beautifiedHtml = html_beautify(markdownHtml);
+                previewHtml.textContent = beautifiedHtml;
+                preview.innerHTML = beautifiedHtml;
+            };
+            editor.onkeyup();
+        })();
+        </script>
+    </body>
+</html>

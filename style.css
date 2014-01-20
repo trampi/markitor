@@ -1,0 +1,22 @@
+.markdown-centered {
+    margin: 0 auto;
+    width: 900px;
+    font-family: arial;
+}
+
+.markdown-editor {
+    width: 100%;
+    height: 200px;
+}
+
+.markdown-html {
+    width: 49%;
+    margin-right: 2%;
+    float: left;
+    white-space: pre-wrap;
+}
+
+.markdown-preview {
+    width: 49%;
+    float: left;
+}
